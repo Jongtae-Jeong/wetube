@@ -2,7 +2,7 @@ import axios from "axios";
 const addCommentForm = document.getElementById("jsAddComment");
 const commentList = document.getElementById("jsCommentList");
 const commentNumber = document.getElementById("jsCommentNumber");
-const deleteBtn = document.getElementById("jsdeleteBtn");
+const CommentItem = document.getElementById("jsCommentItem");
 
 const increaseNumber = () =>{
     commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10)  + 1
