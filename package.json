@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Jun",
   "dependencies": {
+    "@babel/cli": "^7.13.0",
     "@babel/node": "^7.12.10",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
@@ -34,8 +35,7 @@
     "postcss-loader": "^5.0.0",
     "pug": "^3.0.0",
     "sass": "^1.32.6",
-    "sass-loader": "^11.0.1",
-    "@babel/cli": "^7.13.0"
+    "sass-loader": "^11.0.1"
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js",
