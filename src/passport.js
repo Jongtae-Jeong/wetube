@@ -12,7 +12,7 @@ passport.use(new GithubStrategy({
     clientID:process.env.GH_ID,
     clientSecret:process.env.GH_SECRET,
     callbackURL: process.env.PRODUCTION
-    ? `https://polar-sea-27980.herokuapp.com${routes.githubCallback}`
+    ? `https://murmuring-citadel-09639.herokuapp.com/${routes.githubCallback}`
     : `http://localhost:4000${routes.githubCallback}`
 
 }, githubLoginCallback))
@@ -21,7 +21,7 @@ passport.use(new FacebookStrategy({
     clientID:process.env.FB_ID,
     clientSecret:process.env.FB_SECRET,
     callbackURL: process.env.PRODUCTION
-    ? `https://polar-sea-27980.herokuapp.com${routes.githubCallback}`
+    ? `https://murmuring-citadel-09639.herokuapp.com/${routes.githubCallback}`
     : `http://localhost:4000${routes.githubCallback}`
 
 }, facebookLoginCallback))
