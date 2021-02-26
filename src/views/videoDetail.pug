@@ -37,7 +37,5 @@ block content
                         .video__comments-item#jsCommentItem
                             span=comment.text
                             button(type="button",onclick="location.href=`/api/${comment.creator}/delete`") ❌
-                            span=comment.creator
-                            span=loggedUser._id
                             if loggedUser && comment.creator === loggedUser._id
                                 button(type="button",onclick="location.href=`/api/${comment.creator}/delete`") ❌
