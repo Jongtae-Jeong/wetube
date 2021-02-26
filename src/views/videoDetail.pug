@@ -8,7 +8,7 @@ block content
             src:video.fileUrl
         })
         .video__info
-            if loggedUser && video.creator._id === loggedUser._id
+            if loggedUser && string(video.creator._id) === string(loggedUser._id)
                 a(href=routes.editVideo(video.id))
                     button Edit video
             h5.video__title=video.title
@@ -37,5 +37,5 @@ block content
                         span=comment.text
                         span=comment.creator._id
 
-                        if loggedUser && comment.creator._id === loggedUser._id
+                        if loggedUser && string(comment.creator._id) === string(loggedUser._id)
                             button ❌

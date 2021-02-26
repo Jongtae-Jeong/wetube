@@ -36,6 +36,16 @@ const handleSubmit = event =>{
     addCommentForm.querySelector("input").value = "";
 }
 
+const deleteComment = async ()=>{
+    const videoId = window.location.href.split("/videos/")[1];
+
+    const response = await axios({
+        url:`/api/${videoId}/comment`,
+        method:"POST",
+        data:{comment}
+    });
+}
+
 function init(){
     addCommentForm.addEventListener("submit", handleSubmit);
     deleteBtn.addEventListener("click", deleteComment);
