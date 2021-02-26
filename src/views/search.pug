@@ -10,7 +10,7 @@ block content
             h5 NO Video Found
         each video in videos
             +videoBlock({
-                videoFile:video.videoFile,
+                videoFile:video.fileUrl,
                 title:video.title,
                 views:video.views,
                 id:video.id
