@@ -13,7 +13,7 @@ import "./models/Comment";
 
 
 
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 
 const HandleListening = () => console.log(`Listening on : http://localhost:${PORT}`);
 
