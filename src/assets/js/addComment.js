@@ -2,7 +2,6 @@ import axios from "axios";
 const addCommentForm = document.getElementById("jsAddComment");
 const commentList = document.getElementById("jsCommentList");
 const commentNumber = document.getElementById("jsCommentNumber");
-// const CommentItem = document.getElementById("jsCommentItem");
 
 const increaseNumber = () =>{
     commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10)  + 1
@@ -36,19 +35,8 @@ const handleSubmit = event =>{
     addCommentForm.querySelector("input").value = "";
 }
 
-// const deleteComment = async ()=>{
-//     const videoId = window.location.href.split("/videos/")[1];
-
-//     const response = await axios({
-//         url:`/api/${videoId}/comment`,
-//         method:"POST",
-//         data:{comment}
-//     });
-// }
-
 function init(){
     addCommentForm.addEventListener("submit", handleSubmit);
-    // CommentItem.addEventListener("click", deleteComment);
 }
 
 if(addCommentForm){
