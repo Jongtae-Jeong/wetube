@@ -35,7 +35,21 @@
     "pug": "^3.0.0",
     "sass": "^1.32.6",
     "sass-loader": "^11.0.1",
-    "@babel/cli": "^7.13.0",
+    "@babel/cli": "^7.13.0"
+  },
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node init.js",
+    "dev:assets": "cd src && cross-env WEBPACK_ENV=development && webpack -w",
+    "build:assets": "cd src && cross-env WEBPACK_ENV=production && webpack",
+    "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
+    "copyAll": "xcopy src\\static build\\static /d /e /h /c /y /i && xcopy src\\views build\\views /d /e /h /c /y /i",
+    "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "tunnel": "lt --port 4000",
+    "prebuild": "rd /s \"build\"",
+    "prestart": "npm run build".,
+    "start": "PRODUCTION=true node build/init.js"
+  },
+  "devDependencies": {
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.2.0",
@@ -46,20 +60,5 @@
     "prettier": "^2.2.1",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0"
-  },
-  "scripts": {
-    "start": "PRODUCTION=true node build/init.js",
-    "dev:server": "nodemon --exec babel-node init.js",
-    "dev:assets": "cd src && cross-env WEBPACK_ENV=development && webpack -w",
-    "build:assets": "cd src && cross-env WEBPACK_ENV=production && webpack",
-    "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
-    "copyAll": "xcopy src\\static build\\static /d /e /h /c /y /i && xcopy src\\views build\\views /d /e /h /c /y /i",
-    "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "tunnel": "lt --port 4000",
-    "prebuild": "rd /s \"build\"",
-    "prestart": "npm run build"
-
-  },
-  "devDependencies": {
   }
 }
