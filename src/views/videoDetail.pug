@@ -33,9 +33,9 @@ block content
                 input(type="text",placeholder="Add a comment")
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
-                    li #jsdeleteBtn
+                    li#jsdeleteBtn
                         span=comment.text
                         span=comment.creator._id
 
-                        if loggedUser && comment.creator.id === loggedUser.id
+                        if loggedUser && comment.creator._id === loggedUser.id
                             button ❌
