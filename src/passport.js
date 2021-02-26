@@ -21,8 +21,8 @@ passport.use(new FacebookStrategy({
     clientID:process.env.FB_ID,
     clientSecret:process.env.FB_SECRET,
     callbackURL: process.env.PRODUCTION
-    ? `https://murmuring-citadel-09639.herokuapp.com/${routes.githubCallback}`
-    : `http://localhost:4000${routes.githubCallback}`
+    ? `https://murmuring-citadel-09639.herokuapp.com/${routes.facebookCallback}`
+    : `http://localhost:4000${routes.facebookCallback}`
 
 }, facebookLoginCallback))
 
