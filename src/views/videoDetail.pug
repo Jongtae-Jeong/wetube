@@ -8,7 +8,7 @@ block content
             src:video.fileUrl
         })
         .video__info
-            if loggedUser && string(video.creator._id) === string(loggedUser._id)
+            if loggedUser && video.creator._id === loggedUser._id
                 a(href=routes.editVideo(video.id))
                     button Edit video
             h5.video__title=video.title
@@ -33,9 +33,10 @@ block content
                 input(type="text",placeholder="Add a comment")
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
-                    li#jsdeleteBtn
+                    li
                         span=comment.text
                         span=comment.creator._id
+                        span=loggedUser._id
 
-                        if loggedUser && string(comment.creator._id) === string(loggedUser._id)
-                            button ❌
+                        if loggedUser && comment.creator._id === loggedUser._id
+                            button(type="button",onclick="location.href=`/api/${comment.creator._id}/delete`")#jsdeleteBtn ❌
