@@ -39,7 +39,7 @@ export const userDetail = async (req, res) =>{
         res.redirect(routes.home);
     }
 };
-export const getEditProfile = (req, res) => res.render("EditProfile", {pageTitle : "Edit Profile"});
+export const getEditProfile = (req, res) => res.render("editProfile", {pageTitle : "Edit Profile"});
 export const postEditProfile = async (req, res) => {
     const {body:{name, email}, file}=req;
     console.log(req.user.id);
