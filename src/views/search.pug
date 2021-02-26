@@ -6,8 +6,6 @@ block content
     .search__header
         h3 Searhing for #{searchingBy}
     .home-videos
-        if videos.length === 0
-            h5 NO Video Found
         each video in videos
             +videoBlock({
                 videoFile:video.videoFile,
@@ -15,3 +13,5 @@ block content
                 views:video.views,
                 id:video.id
             })
+        if videos.length === 0
+            h5 NO Video Found
