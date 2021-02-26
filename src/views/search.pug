@@ -8,7 +8,7 @@ block content
     .home-videos
         each video in videos
             +videoBlock({
-                videoFile:video.videoFile,
+                videoFile:video.fileUrl,
                 title:video.title,
                 views:video.views,
                 id:video.id
