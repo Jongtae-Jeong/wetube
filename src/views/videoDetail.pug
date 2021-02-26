@@ -34,9 +34,9 @@ block content
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
                     li
-                        span=comment.text
-                        span=comment.creator._id
-                        span=loggedUser._id
-
-                        if loggedUser && comment.creator._id === loggedUser._id
-                            button(type="button",onclick="location.href=`/api/${comment.creator._id}/delete`")#jsdeleteBtn ❌
+                        .video__comments-item#jsCommentitem
+                            span=comment.text
+                            span=comment.creator
+                            span=loggedUser._id
+                            if loggedUser && comment.creator === loggedUser._id
+                                button(type="button",onclick="location.href=`/api/${comment.creator._id}/delete`") ❌
